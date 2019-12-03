@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="859ce275-9e91-4eb8-8c59-2fbce873ac64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test.tsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zakmicallef/ACO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zakmicallef/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zakmicallef/City.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zakmicallef/FileInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zakmicallef/FileInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zakmicallef/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zakmicallef/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zakmicallef/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zakmicallef/Point.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +105,7 @@
       <workItem from="1574011678430" duration="411000" />
       <workItem from="1574767021378" duration="1078000" />
       <workItem from="1574768508933" duration="3326000" />
-      <workItem from="1575372536192" duration="1809000" />
+      <workItem from="1575372536192" duration="4616000" />
     </task>
     <task id="LOCAL-00001" summary="Added New City,And and Point Location Classes">
       <created>1574003310905</created>
@@ -116,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574003310905</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="File Reading Successfull">
+      <created>1575374714378</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575374714378</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +143,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added New City,And and Point Location Classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added New City,And and Point Location Classes" />
+    <MESSAGE value="File Reading Successfull" />
+    <option name="LAST_COMMIT_MESSAGE" value="File Reading Successfull" />
   </component>
   <component name="masterDetails">
     <states>
