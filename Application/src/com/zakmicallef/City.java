@@ -5,6 +5,8 @@ public class City {
     private int cityId;
     private Point location;
 
+    City() {
+    }
 
     public City(int cityId, Point location) {
         this.cityId = cityId;

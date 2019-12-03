@@ -1,11 +1,24 @@
 package com.zakmicallef;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
 
         FileInput file = new FileInput();
+        ArrayList<City> cities = new ArrayList<City>();
 
-        file.readInput("test.tsp");
+        cities = file.readInput("test.tsp");
+
+        for (City city : cities) {
+            System.out.println(city.getCityId() + "\t" + city.getLocation().getX() + " " + city.getLocation().getY());
+        }
+
+
+
+
+
+
     }
 }
