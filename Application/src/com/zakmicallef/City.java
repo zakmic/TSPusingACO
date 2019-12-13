@@ -13,23 +13,23 @@ public class City {
         this.location = location;
     }
 
-    public int getCityId() {
+    int getCityId() {
         return cityId;
     }
 
-    public void setCityId(int cityId) {
+    void setCityId(int cityId) {
         this.cityId = cityId;
     }
 
-    public Point getLocation() {
+    Point getLocation() {
         return location;
     }
 
-    public void setLocation(Point location) {
+    void setLocation(Point location) {
         this.location = location;
     }
 
-    public double distanceTwoCities(Point a, Point b) {
+    static double distanceTwoCities(Point a, Point b) {
         double xa = a.getX();
         double xb = b.getY();
         double ya = a.getY();
