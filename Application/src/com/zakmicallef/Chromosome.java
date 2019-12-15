@@ -8,9 +8,9 @@ public class Chromosome {
     Chromosome(){
     }
 
-    public Chromosome(int[] path, double fitness) {
-        this.path = path;
+    public Chromosome(double fitness, int[] path) {
         this.fitness = fitness;
+        this.path = path;
     }
 
     public int[] getPath() {
