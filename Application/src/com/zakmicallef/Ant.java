@@ -13,6 +13,7 @@ public class Ant {
     public Ant(int initialCity) {
         this.currentCity = initialCity;
         this.path = new ArrayList<Integer>();
+        path.add(initialCity);
         this.pathDistance = 0;
 //        this.visitedCities = visitedCities;
     }

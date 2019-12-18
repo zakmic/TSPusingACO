@@ -15,7 +15,11 @@ public class Main {
             System.out.println(city.getCityId() + "\t" + city.getLocation().getX() + " " + city.getLocation().getY());
         }
 
-        GeneticAlgorithm.GeneticAlgo(cities)
+
+//        GeneticAlgorithm.GeneticAlgo(cities)
+
+
+
 
 
 
