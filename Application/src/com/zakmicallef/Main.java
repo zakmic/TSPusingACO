@@ -7,26 +7,16 @@ public class Main {
     public static void main(String[] args) {
 
         FileInput file = new FileInput();
-        ArrayList<City> cities = new ArrayList<City>();
-
-        cities = file.readInput("test.tsp");
-
-        for (City city : cities) {
-            System.out.println(city.getCityId() + "\t" + city.getLocation().getX() + " " + city.getLocation().getY());
-        }
+        ACO aco = new ACO();
 
 
-//        GeneticAlgorithm.GeneticAlgo(cities)
+        ArrayList<City> cities = file.readInput("test.tsp");
 
+//        for (City city : cities) {
+//            System.out.println(city.getCityId() + "\t" + city.getLocation().getX() + " " + city.getLocation().getY());
+//        }
 
-
-
-
-
-
-
-
-
+        aco.AntColonyOptimization(cities);
 
 
     }

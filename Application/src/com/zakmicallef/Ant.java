@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Ant {
 
     private int currentCity;
-    private int pathDistance;
+    private double pathDistance;
     private ArrayList<Integer> visitedCities;
     private ArrayList<Integer> path;
 
@@ -15,7 +15,8 @@ public class Ant {
         this.path = new ArrayList<Integer>();
         path.add(initialCity);
         this.pathDistance = 0;
-//        this.visitedCities = visitedCities;
+        visitedCities = new ArrayList<>();
+        visitedCities.add(currentCity);
     }
 
     public int getCurrentCity() {
@@ -26,7 +27,7 @@ public class Ant {
         this.currentCity = currentCity;
     }
 
-    public int getPathDistance() {
+    public double getPathDistance() {
         return pathDistance;
     }
 
@@ -44,6 +45,15 @@ public class Ant {
 
     public ArrayList<Integer> getPath() {
         return path;
+    }
+
+    // method which returns the path of an Ant as a string
+    public String getPathString() {
+        StringBuilder string = new StringBuilder();
+        for (int city : path) {
+            string.append((city + 1) + " ");
+        }
+        return string.toString();
     }
 
     public void setPath(ArrayList<Integer> path) {
