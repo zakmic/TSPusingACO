@@ -11,26 +11,28 @@ class ACO {
 
     private static final double q_NOT = 0.9; //Probability Trigger
     private static final double delta = 0.1; //evaporation rate of local pheromone
-    private int antsAmount = 52; //Number of Ants
     private static final double rho = 0.1; //evaporation rate of global pheromone
-    private static final double beta = 3.0; //Trigger Importance
+    private static final double beta = 4.0; //Trigger Importance
     private static final double alpha = 2.0; //Pheromone Importance
 
-    private int citiesAmount; // Number of Cities in TSP
     private double nearestNeighbour;
+    private int citiesAmount; // Number of Cities in TSP
+    private int antsAmount = 10; // Number of Ants
 
 
     void AntColonyOptimization(ArrayList<City> cities) {
 
         int iterations = 100;
         citiesAmount = cities.size();
-        antsAmount = citiesAmount;
+
+        if (citiesAmount < 75){
+            antsAmount = citiesAmount;
+        }
 
         //Initialize Distance matrix and Pheromone Levels between the cities
         Ant[] ants = new Ant[antsAmount];
         distanceMatrix(cities);
         nearestNeighbour = nearestNeighbor(citiesAmount);
-
 
 
         for (int i = 0; i < iterations; i++) {
@@ -66,7 +68,6 @@ class ACO {
         Ant bestAnt = bestAnt(ants);
         System.out.println(bestAnt.getPathString());
         System.out.println("Total Path Distance:\t" + bestAnt.getPathDistance());
-        System.out.println();
     }
 
     private int calcPathDistance(ArrayList<Integer> path) {

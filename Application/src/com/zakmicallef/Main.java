@@ -17,8 +17,8 @@ public class Main {
             ACO aco = new ACO();
             System.out.println("File:\t" + file);
             ArrayList<City> cities = fileObject.readFile(file.getPath());
-
             aco.AntColonyOptimization(cities);
+            System.out.println();
         }
 
     }

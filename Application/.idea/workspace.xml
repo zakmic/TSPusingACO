@@ -6,30 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/com/zakmicallef/ACO.java" line="67" />
+    <bookmark url="file://$PROJECT_DIR$/src/com/zakmicallef/ACO.java" line="69" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="859ce275-9e91-4eb8-8c59-2fbce873ac64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Application_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zakmicallef/TspFileFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ACO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/berlin52.tsp" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/berlin52.tsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasetl/berlin52.tsp.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zakmicallef/ACO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zakmicallef/ACO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zakmicallef/Chromosome.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zakmicallef/FileInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zakmicallef/FileInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zakmicallef/GeneticAlgorithm.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zakmicallef/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zakmicallef/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zakmicallef/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zakmicallef/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.tsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dataset/att48.tsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dataset/bayg29.opt.tour" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dataset/bayg29.tsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dataset/eil101.opt.tour" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dataset/eil101.tsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dataset/eil76.opt.tour" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dataset/eil76.tsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zakmicallef/TspFileFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zakmicallef/TspFileFilter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/zakmicallef/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state relative-caret-position="374">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,11 +73,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/zakmicallef/ACO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4177">
-              <caret line="247" column="54" lean-forward="true" selection-start-line="247" selection-start-column="54" selection-end-line="247" selection-end-column="54" />
+            <state relative-caret-position="255">
+              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7838#7839#0" expanded="true" />
+                <element signature="e#7873#7874#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -198,13 +183,13 @@
         <option value="$PROJECT_DIR$/test.tsp" />
         <option value="$PROJECT_DIR$/src/com/zakmicallef/TspFileFilter.java" />
         <option value="$PROJECT_DIR$/src/com/zakmicallef/Point.java" />
-        <option value="$PROJECT_DIR$/src/com/zakmicallef/Main.java" />
         <option value="$PROJECT_DIR$/src/com/zakmicallef/FileInput.java" />
         <option value="$PROJECT_DIR$/src/com/zakmicallef/ACO.java" />
+        <option value="$PROJECT_DIR$/src/com/zakmicallef/Main.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="976" />
@@ -390,7 +375,7 @@
       <workItem from="1577548358077" duration="6141000" />
       <workItem from="1577796865175" duration="1208000" />
       <workItem from="1577879246621" duration="2934000" />
-      <workItem from="1577961826964" duration="27532000" />
+      <workItem from="1577961826964" duration="29610000" />
     </task>
     <task id="LOCAL-00001" summary="Added New City,And and Point Location Classes">
       <created>1574003310905</created>
@@ -431,7 +416,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91961000" />
+    <option name="totallyTimeSpent" value="94039000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -455,7 +440,7 @@
       <window_info id="Favorites" order="6" side_tool="true" weight="0.32932165" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39228296" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2636656" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -649,32 +634,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zakmicallef/TspFileFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zakmicallef/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,13 +651,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zakmicallef/ACO.java">
+    <entry file="file://$PROJECT_DIR$/src/com/zakmicallef/TspFileFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4177">
-          <caret line="247" column="54" lean-forward="true" selection-start-line="247" selection-start-column="54" selection-end-line="247" selection-end-column="54" />
+        <state relative-caret-position="85">
+          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7838#7839#0" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zakmicallef/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zakmicallef/ACO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7873#7874#0" expanded="true" />
           </folding>
         </state>
       </provider>
