@@ -30,7 +30,7 @@ class FileInput {
                 location.setX(Double.parseDouble(cityFeilds[1]));
                 location.setY(Double.parseDouble(cityFeilds[2]));
                 city.setLocation(location);
-                System.out.println(city.getCityId() + "\t" + location.getX() + " " + location.getY());
+//                System.out.println(city.getCityId() + "\t" + location.getX() + " " + location.getY());
                 cities.add(city);
             }
         }

@@ -1,6 +1,8 @@
 package com.zakmicallef;
 
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
 
@@ -16,7 +18,21 @@ public class Main {
 //            System.out.println(city.getCityId() + "\t" + city.getLocation().getX() + " " + city.getLocation().getY());
 //        }
 
-        aco.AntColonyOptimization(cities);
+        ArrayList<Double> distances = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            distances.add(aco.AntColonyOptimization(cities));
+        }
+
+        double total = 0;
+
+        for (double pathDistance : distances) {
+            total += pathDistance;
+        }
+
+        double avg = total / distances.size();
+
+        System.out.println("\nAverage Path Distance:\t" + avg);
 
 
     }
