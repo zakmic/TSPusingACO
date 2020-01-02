@@ -7,34 +7,32 @@ class ACO {
 
     private double[][] distanceMatrix;
     private double[][] pheromoneMatrix;
-    private int antsAmount = 52; //Number of Ants
 
 
     private static final double q_NOT = 0.9; //Probability Trigger
-    private double delta = 0.1; //evaporation rate of local pheromone
-//    private double ro = 0.1; //evaporation rate of global pheromone
-    private static final double beta = 4.0; //Trigger Importance
+    private static final double delta = 0.1; //evaporation rate of local pheromone
+    private int antsAmount = 52; //Number of Ants
+    private static final double rho = 0.1; //evaporation rate of global pheromone
+    private static final double beta = 3.0; //Trigger Importance
     private static final double alpha = 2.0; //Pheromone Importance
 
     private int citiesAmount; // Number of Cities in TSP
-    private double Lnn;
-
-    //Initialize the Ants using Ant array
-    private Ant[] ants = new Ant[antsAmount];
+    private double nearestNeighbour;
 
 
-    double AntColonyOptimization(ArrayList<City> cities) {
+    void AntColonyOptimization(ArrayList<City> cities) {
 
+        int iterations = 100;
         citiesAmount = cities.size();
-
+        antsAmount = citiesAmount;
 
         //Initialize Distance matrix and Pheromone Levels between the cities
+        Ant[] ants = new Ant[antsAmount];
         distanceMatrix(cities);
+        nearestNeighbour = nearestNeighbor(citiesAmount);
 
-        //Init Ants List
-        int iterations = 20;
 
-        Lnn = nearestNeighbor(citiesAmount);
+
         for (int i = 0; i < iterations; i++) {
 
             //Generate the ants
@@ -44,7 +42,7 @@ class ACO {
                 ants[j] = ant;
             }
 
-            //For Every City 
+            //For Every City
             for (int j = 0; j < citiesAmount; j++) {
                 for (Ant ant : ants) {
                     //Moves current ant to the next city
@@ -68,52 +66,7 @@ class ACO {
         Ant bestAnt = bestAnt(ants);
         System.out.println(bestAnt.getPathString());
         System.out.println("Total Path Distance:\t" + bestAnt.getPathDistance());
-        return bestAnt.getPathDistance();
-
-    }
-
-    // Change All
-    private double nearestNeighbor(int pathDistance) {
-
-        // declaring the city the Nearest Neighbour Algorithm Ant will start from
-        int startingCity = new Random().nextInt(citiesAmount);
-
-        // set the currentCity as the Starting City
-        int currentCity = startingCity;
-        Ant nn = new Ant(startingCity);
-
-        Set<Integer> unvisited = new HashSet<>();
-
-        for (int i = 0; i < pathDistance; i++) {
-            unvisited.add(i);
-        }
-
-        // remove the startingCity from the set of unvisited
-        unvisited.remove(startingCity);
-
-        // for the length of the path
-        for (int i = 1; i < pathDistance; i++) {
-            // initially set the closestCity to a random city from the set of unvisited
-            int closestCity = unvisited.iterator().next();
-            // loop through every unvisitedCity to find the closestCity
-            for (Integer city : unvisited) {
-                // if the distance between the currentCity and the unvisitedCity is < the distance between
-                // the currentCity and the closestCity
-                if (distanceMatrix[currentCity][city] < distanceMatrix[currentCity][closestCity]) {
-                    // set thet unvisitedCity as the closestCity
-                    closestCity = city;
-                }
-            }
-
-            // add the closestCity as the next city in the path
-            nn.getPath().add(closestCity);
-            // make the currentCity for the next iteration the current closestCity
-            currentCity = closestCity;
-            // remove the closestCity from the set of unvisited
-            unvisited.remove(closestCity);
-        }
-
-        return calcPathDistance(nn.getPath());
+        System.out.println();
     }
 
     private int calcPathDistance(ArrayList<Integer> path) {
@@ -148,17 +101,24 @@ class ACO {
             int cityA = bestAnt.getPath().get(i);
             int cityB = bestAnt.getPath().get(i + 1);
 
-            pheromoneMatrix[cityA][cityB] += delta * (1 / bestAnt.getPathDistance());
-            pheromoneMatrix[cityA][cityB] = pheromoneMatrix[cityB][cityA];
+            pheromoneMatrix[cityA][cityB] *= (1 - rho);
+            pheromoneMatrix[cityA][cityB] += rho * (1 / bestAnt.getPathDistance());
+            symmetric(cityA, cityB);
         }
 
         int cityA = bestAnt.getPath().get(bestAnt.getPath().size() - 1);
         int cityB = bestAnt.getPath().get(0);
 
-        pheromoneMatrix[cityA][cityB] += delta * (1 / bestAnt.getPathDistance());
-        pheromoneMatrix[cityA][cityB] = pheromoneMatrix[cityB][cityA];
+        pheromoneMatrix[cityA][cityB] *= (1 - rho);
+        pheromoneMatrix[cityA][cityB] += rho * (1 / bestAnt.getPathDistance());
+        symmetric(cityA, cityB);
 
-
+//        for (int i = 0; i < citiesAmount - 1; i++) {
+//            for (int j = 0; j < citiesAmount - 1; j++) {
+//                pheromoneMatrix[i][j] += delta * (1 / bestAnt.getPathDistance());
+//                symmetric(i, j);
+//            }
+//        }
     }
 
     private static Ant bestAnt(Ant[] ants) {
@@ -177,12 +137,10 @@ class ACO {
     }
 
     private void localPheromoneUpdate(int currentCity, int nextCity) {
-        double pheromoneLevel = (1 - delta) * (pheromoneMatrix[currentCity][nextCity])
-                + (delta / (citiesAmount * Lnn));
 
-        pheromoneMatrix[currentCity][nextCity] = pheromoneLevel;
-        pheromoneMatrix[nextCity][currentCity] = pheromoneLevel;
-
+        pheromoneMatrix[currentCity][nextCity] = (1 - delta) * (pheromoneMatrix[currentCity][nextCity])
+                + (delta * (1 / (citiesAmount * nearestNeighbour)));
+        symmetric(currentCity, nextCity);
     }
 
 
@@ -192,7 +150,6 @@ class ACO {
         double[] probability = new double[citiesAmount];
 
         for (int i = 0; i < citiesAmount; i++) {
-
             if (!ant.getVisitedCities().contains(i)) {
                 double tau = pheromoneMatrix[ant.getCurrentCity()][i];
                 double eta = 1 / distanceMatrix[ant.getCurrentCity()][i];
@@ -200,7 +157,7 @@ class ACO {
             }
         }
 
-        if (new Random().nextDouble() > q_NOT) {
+        if (new Random().nextDouble() < q_NOT) {
             nextCityID = bestCity(probability);
         } else {
             double[] probabilityAlt = new double[citiesAmount];
@@ -218,26 +175,58 @@ class ACO {
                 nextCityID++;
             }
         }
-
         return nextCityID;
     }
 
 
-
-    private static int bestCity(double[] points) {
+    private static int bestCity(double[] probability) {
 
         // choose the city with the highest 'score' as the next city the ant will visit
-        double maxScore = points[0];
+        double maxProbability = probability[0];
         int bestCity = 0;
 
-        for (int i = 1; i < points.length; i++) {
-            if (points[i] > maxScore) {
-                maxScore = points[i];
+        for (int i = 1; i < probability.length; i++) {
+            if (probability[i] > maxProbability) {
+                maxProbability = probability[i];
                 bestCity = i;
             }
         }
 
         return bestCity;
+    }
+
+    private double nearestNeighbor(int pathDistance) {
+
+        int startingCity = new Random().nextInt(citiesAmount);
+
+        Ant ant = new Ant(startingCity);
+
+        Set<Integer> unvisited = new HashSet<>();
+
+        for (int i = 0; i < pathDistance; i++) {
+            unvisited.add(i);
+        }
+
+        unvisited.remove(startingCity);
+
+        int currentCity = startingCity;
+
+        for (int i = 1; i < pathDistance; i++) {
+
+            int nearestCity = unvisited.iterator().next();
+
+            for (Integer city : unvisited) {
+                if (distanceMatrix[currentCity][city] < distanceMatrix[currentCity][nearestCity]) {
+                    nearestCity = city;
+                }
+            }
+
+            ant.getPath().add(nearestCity);
+            currentCity = nearestCity;
+            unvisited.remove(nearestCity);
+        }
+
+        return calcPathDistance(ant.getPath());
     }
 
     private void distanceMatrix(ArrayList<City> cities) {
@@ -249,11 +238,13 @@ class ACO {
             for (int j = 0; j < citiesAmount; j++) {
                 distanceMatrix[i][j] = City.distanceTwoCities(cities.get(i).getLocation(), cities.get(j).getLocation());
                 distanceMatrix[j][i] = distanceMatrix[i][j];
-                pheromoneMatrix[i][j] = 0.00001;
-                pheromoneMatrix[j][i] = 0.00001;
+                pheromoneMatrix[i][j] = 0.0001;
+                symmetric(i, j);
             }
         }
     }
 
-
+    private void symmetric(int a, int b) {
+        pheromoneMatrix[b][a] = pheromoneMatrix[a][b];
+    }
 }

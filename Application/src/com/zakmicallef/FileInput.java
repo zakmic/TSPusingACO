@@ -6,9 +6,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-class FileInput {
+public class FileInput {
 
-    ArrayList<City> readInput(String filePath) {
+    public ArrayList<City> readFile(String filePath) {
         try {
             return readCities(Files.readAllLines(Paths.get(filePath)));
         } catch (IOException e) {
