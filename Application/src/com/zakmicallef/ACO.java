@@ -61,8 +61,6 @@ class ACO {
 
             //Preform Global Pheromone Update
             globalPheromoneUpdate(bestAnt(ants));
-
-
         }
 
         Ant bestAnt = bestAnt(ants);
