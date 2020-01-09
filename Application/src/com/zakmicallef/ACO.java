@@ -25,7 +25,7 @@ class ACO {
         int iterations = 100;
         citiesAmount = cities.size();
 
-        if (citiesAmount < 75){
+        if (citiesAmount < 75) {
             antsAmount = citiesAmount;
         }
 
@@ -83,7 +83,7 @@ class ACO {
 
     private void moveAnt(Ant ant) {
         //Get the next city that ant will travel too
-        int nextCityID = nextCity(ant);
+        int nextCityID = selectCity(ant);
 
         //Preform Pheromone update to next vertex in path.
         localPheromoneUpdate(ant.getCurrentCity(), nextCityID);
@@ -143,7 +143,7 @@ class ACO {
     }
 
 
-    private int nextCity(Ant ant) {
+    private int selectCity(Ant ant) {
 
         int nextCityID = 0;
         double[] probability = new double[citiesAmount];
