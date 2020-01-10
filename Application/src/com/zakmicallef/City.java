@@ -31,7 +31,7 @@ public class City {
 
     static double distanceTwoCities(Point a, Point b) {
         double xa = a.getX();
-        double xb = b.getY();
+        double xb = b.getX();
         double ya = a.getY();
         double yb = b.getY();
         double distance;
